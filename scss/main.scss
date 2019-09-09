@@ -1,9 +1,7 @@
 @import "./resets";
 @import "./variables";
-
-@function weight($weight-name) {
-  @return map-get($font-weights, $weight-name);
-}
+@import "./functions";
+@import "./mixins";
 
 body {
   background: $primary-color;
@@ -11,14 +9,23 @@ body {
 }
 
 .main {
+  @include flex-center(row);
   width: 80%;
   margin: 0 auto;
 
   #{&}__paragraph {
     font-weight: weight(bold);
+    padding: 1em;
 
     &:hover {
       color: $accent-color;
     }
   }
+  @include mobile {
+    flex-direction: column;
+  }
+}
+
+.light {
+  @include theme(false);
 }
