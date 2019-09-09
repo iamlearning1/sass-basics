@@ -1,3 +1,21 @@
+// css variables
+// :root {
+//   --primary-color: grey;
+// }
+
+// scss variables
+$primary-color: #272727;
+$accent-color: #ff652f;
+$text-color: #fff;
+
+$font-weights: (
+  "regular": 400,
+  "medium": 500,
+  "bold": 700
+);
+
 body {
-  background: blue;
+  background: $primary-color;
+  font-weight: map-get($font-weights, bold);
+  color: $text-color;
 }
